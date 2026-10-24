@@ -57,8 +57,8 @@ export function Navbar() {
         <nav aria-label="Main" className="hidden items-center gap-1 md:flex">
           {nav.map((n) => (
             <Link key={n.to} to={n.to} activeOptions={{ exact: n.to === "/" }}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground data-[status=active]:text-primary"
-              activeProps={{ "data-status": "active" } as never}>
+              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition hover:text-foreground"
+              activeProps={{ className: "!text-primary" }}>
               {n.label}
             </Link>
           ))}
