@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { categoryLabel, type Service } from "@/data/services";
 
-function Highlight({ text, query }: { text: string; query?: string }) {
+function Highlight({ text, query }: { text: string; query?: string | undefined }) {
   const q = query?.trim();
   if (!q) return <>{text}</>;
   const i = text.toLowerCase().indexOf(q.toLowerCase());
@@ -16,7 +16,7 @@ function Highlight({ text, query }: { text: string; query?: string }) {
   );
 }
 
-export function ServiceCard({ service, query }: { service: Service; query?: string }) {
+export function ServiceCard({ service, query }: { service: Service; query?: string | undefined }) {
   const Icon = service.icon;
   return (
     <Link
